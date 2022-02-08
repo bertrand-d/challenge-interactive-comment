@@ -39,4 +39,9 @@ p {
   background: #67727e;
 }
 
+#comments-container {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
 /*# sourceMappingURL=style.css.map */

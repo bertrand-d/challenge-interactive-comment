@@ -2,9 +2,12 @@
 @import './abstracts/_variables';
 
 //Base
-@import './base/_base';
-@import './base/_typography';
+@import './base/_base',
+        './base/_typography';
 
 //Components
-@import './components/_box';
-@import './components/_button';
+@import './components/_box',
+        './components/_button';
+
+//Components
+@import './pages/_home';
