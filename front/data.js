@@ -1,4 +1,4 @@
-{
+let data = {
   "currentUser": {
     "image": { 
       "png": "./images/avatars/image-juliusomo.png",
