@@ -1,0 +1,19 @@
+{
+  "name": "challenge-interactive-comment",
+  "version": "1.0.0",
+  "description": "![Design preview for the Interactive comments section coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass  --watch ./front/css/main.scss:./front/css/style.css --style expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reuby-dev/challenge-interactive-comment.git"
+  },
+  "author": "reuby-dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reuby-dev/challenge-interactive-comment/issues"
+  },
+  "homepage": "https://github.com/reuby-dev/challenge-interactive-comment#readme"
+}
