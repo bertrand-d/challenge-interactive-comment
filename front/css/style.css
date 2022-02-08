@@ -15,4 +15,28 @@ p {
   font-size: 16px;
 }
 
+.box {
+  display: flex;
+  border-radius: 10px;
+  padding: 20px;
+  background: white;
+}
+
+.button {
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  text-align: center;
+  color: white;
+}
+.button.send {
+  background: #5457b6;
+}
+.button.delete {
+  background: #ed6468;
+}
+.button.cancel {
+  background: #67727e;
+}
+
 /*# sourceMappingURL=style.css.map */
