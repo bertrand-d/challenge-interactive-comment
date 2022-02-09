@@ -1,12 +1,81 @@
 .box {
-    display: flex;
     border-radius: 10px;
     padding: 20px;
     background: $white;
 
-    // &.comment {
-        
-    // }
+    &.comment {
+        display: flex;
+
+        .notation {
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            width: min-content;
+            height: min-content;
+            padding: 10px;
+            text-align: center;
+            background: $very-light-gray;
+            color: $moderate-blue;
+            font-weight: 500;
+            gap: 10px 0;
+            margin-right: 20px;
+
+            .plus, 
+            .minus {
+                cursor: pointer;
+                color: $light-grayish-blue;
+                font-size: 20px;
+                transition: color ease-in-out 0.1s;
+
+                &:hover {
+                    color: $moderate-blue;
+                }
+            }
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+
+            .avatar {
+                display: flex;
+                align-items: center;
+                color: $dark-blue;
+                font-weight: 500;
+                margin-right: 20px;
+
+                > img {
+                    width: 50px;
+                    margin-right: 20px;
+                }
+            }
+
+            .time {
+                color: $grayish-blue;
+            }
+
+            .reply {
+                cursor: pointer;
+                margin-left: auto;
+                color: $moderate-blue;
+                font-weight: 500;
+                transition: opacity ease-in-out 0.1s;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+
+                > img {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        p {
+            color: $grayish-blue;
+            line-height: 25px;
+        }
+    }
 
     // &.delete {
 

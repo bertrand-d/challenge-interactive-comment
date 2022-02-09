@@ -16,10 +16,72 @@ p {
 }
 
 .box {
-  display: flex;
   border-radius: 10px;
   padding: 20px;
   background: white;
+}
+.box.comment {
+  display: flex;
+}
+.box.comment .notation {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: min-content;
+  height: min-content;
+  padding: 10px;
+  text-align: center;
+  background: #f5f6fa;
+  color: #5457b6;
+  font-weight: 500;
+  gap: 10px 0;
+  margin-right: 20px;
+}
+.box.comment .notation .plus,
+.box.comment .notation .minus {
+  cursor: pointer;
+  color: #c3c4ef;
+  font-size: 20px;
+  transition: color ease-in-out 0.1s;
+}
+.box.comment .notation .plus:hover,
+.box.comment .notation .minus:hover {
+  color: #5457b6;
+}
+.box.comment .top {
+  display: flex;
+  align-items: center;
+}
+.box.comment .top .avatar {
+  display: flex;
+  align-items: center;
+  color: #324152;
+  font-weight: 500;
+  margin-right: 20px;
+}
+.box.comment .top .avatar > img {
+  width: 50px;
+  margin-right: 20px;
+}
+.box.comment .top .time {
+  color: #67727e;
+}
+.box.comment .top .reply {
+  cursor: pointer;
+  margin-left: auto;
+  color: #5457b6;
+  font-weight: 500;
+  transition: opacity ease-in-out 0.1s;
+}
+.box.comment .top .reply:hover {
+  opacity: 0.5;
+}
+.box.comment .top .reply > img {
+  margin-right: 5px;
+}
+.box.comment p {
+  color: #67727e;
+  line-height: 25px;
 }
 
 .button {
