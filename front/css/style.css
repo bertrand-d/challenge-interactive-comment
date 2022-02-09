@@ -25,6 +25,9 @@ p {
   position: relative;
   padding: 20px 20px 40px 20px;
 }
+.box.comment:not(:last-child) {
+  margin-bottom: 20px;
+}
 @media (min-width: 992px) {
   .box.comment {
     padding: 20px;
