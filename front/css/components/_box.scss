@@ -5,10 +5,18 @@
 
     &.comment {
         display: flex;
+        position: relative;
+        padding: 20px 20px 40px 20px;
+
+        @include media-breakpoint-up(md){
+            padding: 20px;
+        }
 
         .notation {
+            position: absolute;
+            bottom: 20px;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             border-radius: 10px;
             width: min-content;
             height: min-content;
@@ -17,8 +25,14 @@
             background: $very-light-gray;
             color: $moderate-blue;
             font-weight: 500;
-            gap: 10px 0;
+            gap: 0 15px;
             margin-right: 20px;
+
+            @include media-breakpoint-up(md){
+                position: static;
+                flex-direction: column;
+                gap: 10px 0;
+            }
 
             .plus, 
             .minus {
@@ -56,13 +70,20 @@
 
             .reply {
                 cursor: pointer;
+                position: absolute;
                 margin-left: auto;
                 color: $moderate-blue;
                 font-weight: 500;
                 transition: opacity ease-in-out 0.1s;
+                bottom: 32.5px;
+                right: 20px;
 
                 &:hover {
                     opacity: 0.5;
+                }
+
+                @include media-breakpoint-up(md){
+                    position: static;
                 }
 
                 > img {
@@ -71,9 +92,14 @@
             }
         }
 
-        p {
+        .comment-content {
             color: $grayish-blue;
             line-height: 25px;
+            margin-bottom: 40px;
+            
+            @include media-breakpoint-up(md){
+                margin-bottom: 20px;
+            }
         }
     }
 

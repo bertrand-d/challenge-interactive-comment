@@ -22,10 +22,19 @@ p {
 }
 .box.comment {
   display: flex;
+  position: relative;
+  padding: 20px 20px 40px 20px;
+}
+@media (min-width: 992px) {
+  .box.comment {
+    padding: 20px;
+  }
 }
 .box.comment .notation {
+  position: absolute;
+  bottom: 20px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   border-radius: 10px;
   width: min-content;
   height: min-content;
@@ -34,8 +43,15 @@ p {
   background: #f5f6fa;
   color: #5457b6;
   font-weight: 500;
-  gap: 10px 0;
+  gap: 0 15px;
   margin-right: 20px;
+}
+@media (min-width: 992px) {
+  .box.comment .notation {
+    position: static;
+    flex-direction: column;
+    gap: 10px 0;
+  }
 }
 .box.comment .notation .plus,
 .box.comment .notation .minus {
@@ -68,20 +84,34 @@ p {
 }
 .box.comment .top .reply {
   cursor: pointer;
+  position: absolute;
   margin-left: auto;
   color: #5457b6;
   font-weight: 500;
   transition: opacity ease-in-out 0.1s;
+  bottom: 32.5px;
+  right: 20px;
 }
 .box.comment .top .reply:hover {
   opacity: 0.5;
 }
+@media (min-width: 992px) {
+  .box.comment .top .reply {
+    position: static;
+  }
+}
 .box.comment .top .reply > img {
   margin-right: 5px;
 }
-.box.comment p {
+.box.comment .comment-content {
   color: #67727e;
   line-height: 25px;
+  margin-bottom: 40px;
+}
+@media (min-width: 992px) {
+  .box.comment .comment-content {
+    margin-bottom: 20px;
+  }
 }
 
 .button {

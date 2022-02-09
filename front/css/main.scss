@@ -1,5 +1,7 @@
 //Abstracts
-@import './abstracts/_variables';
+@import './abstracts/_breakpoints',
+        './abstracts/_mixins',
+        './abstracts/_variables';
 
 //Base
 @import './base/_base',
