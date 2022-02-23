@@ -44,8 +44,12 @@
     }
 
     &.subreply-box {
-        margin-left: 60px;
+        margin-left: 15px;
         margin-bottom: 20px;
+
+        @include media-breakpoint-up(md){
+            margin-left: 60px;
+        }
 
         &:before {
             content: "";
