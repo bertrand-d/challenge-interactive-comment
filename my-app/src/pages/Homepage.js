@@ -4,12 +4,14 @@ import data from '../data/data.json'
 
 export default function Homepage() {
 
+    console.log(data)
+
     return(
         <>
             {
                 data.comments.map((comment, index) => {
                     return (
-                        <CommentBox key={"comment" + index} score={comment.score} autor={comment.user.username} avatar={comment.user.image.png} date={comment.createdAt} content={comment.content} children={
+                        <CommentBox key={"comment" + index} score={comment.score} autor={comment.user.username} avatar={comment.user.image.png} date={comment.createdAt} content={comment.content} subComment={
                             data.comments[index].replies.map((subComment, i) => <SubComment key={'sub' + i} score={subComment.score} autor={subComment.user.username} avatar={subComment.user.image.png} date={subComment.createdAt} content={subComment.content} ></SubComment>)
                         }/> 
                     )

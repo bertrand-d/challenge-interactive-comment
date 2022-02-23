@@ -1,8 +1,13 @@
 import replyIcon from '../images/icon-reply.svg'
+import ReplyBox from './ReplyBox'
+import {useState} from 'react'
+import data from '../data/data.json'
 
 export default function CommentBox(props) {
 
-    console.log(props)
+    const [reply, setReply] = useState(false);
+  
+
     return (
         <div className="comment-container">
             <div className="box comment">
@@ -22,7 +27,7 @@ export default function CommentBox(props) {
                             <span>{props.autor}</span>
                         </span>
                         <span className="time">{props.date}</span>
-                        <span className="reply">
+                        <span className="reply" onClick={ () => setReply(!reply)}>
                             <img src={replyIcon}alt="reply icon"/>
                             <span>Reply</span>
                         </span>
@@ -31,8 +36,8 @@ export default function CommentBox(props) {
                     </p>
                 </div>
             </div>
-
-            {props.children}
+            {props.subComment}
+            {reply && <ReplyBox avatar={data.currentUser.image.png} />}   
         </div>
     );
 }

@@ -7,8 +7,10 @@
         './base/_typography';
 
 //Components
-@import './components/_box',
-        './components/_button';
+@import './components/_button',
+        './components/_comment-box',
+        './components/_reply-box';
+
 
 //Components
 @import './pages/_home';

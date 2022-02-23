@@ -5,3 +5,13 @@
 body {
     background: $light-gray;
 }
+
+textarea {
+    border-radius: 5px;
+    border: solid 1px darken($light-gray, 10%);
+    padding: 10px;
+
+    &:focus-visible {
+        outline: solid 1px black;
+    }
+}

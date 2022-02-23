@@ -4,6 +4,10 @@
     padding: 15px 30px;
     text-align: center;
     color: $white;
+    font-weight: 700;
+    border: none;
+    height: min-content;
+    cursor: pointer;
 
     &.send {
         background: $moderate-blue;
