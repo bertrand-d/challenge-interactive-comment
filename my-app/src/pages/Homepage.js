@@ -1,5 +1,6 @@
 import CommentBox from "../components/CommentBox";
 import SubComment from '../components/SubCommentBox'
+import PostBox from "../components/PostBox"
 import data from '../data/data.json'
 
 export default function Homepage() {
@@ -17,6 +18,8 @@ export default function Homepage() {
                     )
                 })
             }
+
+            <PostBox avatar={data.currentUser.image.png} />
         </>
     );
 }
