@@ -1,6 +1,6 @@
-export default function ReplyBox(props) {
+export default function SubReplyBox(props) {
     return (
-        <div className={`reply-box ${ props.subStyle }`} >
+        <div className="reply-box">
             <div className="avatar">
                 <img src={props.avatar} alt='avatar'/>
             </div>

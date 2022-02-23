@@ -7,7 +7,6 @@ export default function CommentBox(props) {
 
     const [reply, setReply] = useState(false);
   
-
     return (
         <div className="comment-container">
             <div className="box comment">

@@ -42,4 +42,22 @@
             position: static;
         }
     }
+
+    &.subreply-box {
+        margin-left: 60px;
+        margin-bottom: 20px;
+
+        &:before {
+            content: "";
+            border-left: solid 2px #dbdee6;
+            position: absolute;
+            left: -15px;
+            top: -20px;
+            height: calc(100% + 20px);
+
+            @include media-breakpoint-up(md){
+                left: -30px;
+            }
+        }
+    }
 }

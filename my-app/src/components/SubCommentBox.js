@@ -1,8 +1,14 @@
 import replyIcon from '../images/icon-reply.svg'
+import ReplyBox from './ReplyBox'
+import data from '../data/data.json'
+import {useState} from 'react'
 
 export default function SubCommentBox(props) {
 
+    const [reply, setReply] = useState(false);
+
     return (
+        <>
         <div className="box comment subcomment">
             <div className="notation">
                 <span className="plus">
@@ -20,7 +26,7 @@ export default function SubCommentBox(props) {
                         <span>{props.autor}</span>
                     </span>
                     <span className="time">{props.date}</span>
-                    <span className="reply">
+                    <span className="reply" onClick={ () => setReply(!reply)}>
                         <img src={replyIcon}alt="reply icon"/>
                         <span>Reply</span>
                     </span>
@@ -29,5 +35,8 @@ export default function SubCommentBox(props) {
                 </p>
             </div>
         </div>
+        
+        {reply && <ReplyBox avatar={data.currentUser.image.png} subStyle="subreply-box" />}
+        </>
     );
 }
