@@ -1,25 +1,21 @@
 import CommentBox from "../components/CommentBox";
-import SubComment from '../components/SubCommentBox'
 import PostBox from "../components/PostBox"
 import data from '../data/data.json'
 
 export default function Homepage() {
-
-    console.log(data)
+    localStorage.setItem("comment", JSON.stringify(data));
+    let commentStorage = JSON.parse(localStorage.getItem('comment'));
 
     return(
         <>
             {
-                data.comments.map((comment, index) => {
+                commentStorage.comments.map((comment, index) => {
                     return (
-                        <CommentBox key={"comment" + index} score={comment.score} autor={comment.user.username} avatar={comment.user.image.png} date={comment.createdAt} content={comment.content} subComment={
-                            data.comments[index].replies.map((subComment, i) => <SubComment key={'sub' + i} score={subComment.score} autor={subComment.user.username} avatar={subComment.user.image.png} date={subComment.createdAt} content={subComment.content} ></SubComment>)
-                        }/> 
+                        <CommentBox key={"comment" + index} id={index}/> 
                     )
                 })
             }
-
-            <PostBox avatar={data.currentUser.image.png} />
+            <PostBox avatar={commentStorage.currentUser.image.png} />
         </>
     );
 }

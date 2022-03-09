@@ -1,42 +1,60 @@
+import SubCommentBox from './SubCommentBox';
 import replyIcon from '../images/icon-reply.svg'
 import ReplyBox from './ReplyBox'
 import {useState} from 'react'
-import data from '../data/data.json'
 
 export default function CommentBox(props) {
+    let commentStorage = JSON.parse(localStorage.getItem('comment'));
+    let comment = commentStorage.comments[props.id];
+    console.log(comment)
 
     const [reply, setReply] = useState(false);
-  
+    const [editScore, setEditScore] = useState(comment.score);
+
+    function addScore() {
+        setEditScore(editScore +1)
+    }
+
+    function lessScore() {
+        setEditScore(editScore -1)
+    }
+
     return (
         <div className="comment-container">
             <div className="box comment">
                 <div className="notation">
-                    <span className="plus">
+                    <span className="plus" onClick={addScore}>
                         +
                     </span>
-                    <span>{props.score}</span>
-                    <span className="minus">
+                    <span>{editScore}</span>
+                    <span className="minus" onClick={lessScore}>
                         -
                     </span>
                 </div>
                 <div>
                     <div className="top">
                         <span className="avatar">
-                            <img src={process.env.PUBLIC_URL + props.avatar} alt="avatar"/>
-                            <span>{props.autor}</span>
+                            <img src={process.env.PUBLIC_URL + comment.user.image.png} alt="avatar"/>
+                            <span>{comment.user.username}</span>
                         </span>
-                        <span className="time">{props.date}</span>
+                        <span className="time">{comment.createdAt}</span>
                         <span className="reply" onClick={ () => setReply(!reply)}>
                             <img src={replyIcon}alt="reply icon"/>
                             <span>Reply</span>
                         </span>
                     </div>
-                    <p className="comment-content">{props.content}
+                    <p className="comment-content">{comment.content}
                     </p>
                 </div>
             </div>
-            {props.subComment}
-            {reply && <ReplyBox avatar={data.currentUser.image.png} />}   
+            {
+                comment.replies.map((comment, index) => {
+                    return (
+                        <SubCommentBox key={"subComment" + index}/>
+                    )
+                })
+            }
+            {reply && <ReplyBox avatar={commentStorage.currentUser.image.png}/>}   
         </div>
     );
 }

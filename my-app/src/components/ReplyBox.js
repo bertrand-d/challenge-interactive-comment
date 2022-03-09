@@ -4,7 +4,7 @@ export default function ReplyBox(props) {
             <div className="avatar">
                 <img src={props.avatar} alt='avatar'/>
             </div>
-            <textarea/>
+            <textarea placeholder="Add a reply..."/>
             <button className="button send">Reply</button>
         </div>
     )

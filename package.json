@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/reuby-dev/challenge-interactive-comment/issues"
   },
-  "homepage": "https://github.com/reuby-dev/challenge-interactive-comment#readme"
+  "homepage": "https://github.com/reuby-dev/challenge-interactive-comment#readme",
+  "dependencies": {
+    "lowdb": "^3.0.0"
+  }
 }
