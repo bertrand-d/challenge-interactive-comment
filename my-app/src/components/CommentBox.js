@@ -6,7 +6,6 @@ import {useState} from 'react'
 export default function CommentBox(props) {
     let commentStorage = JSON.parse(localStorage.getItem('comment'));
     let comment = commentStorage.comments[props.id];
-    console.log(comment)
 
     const [reply, setReply] = useState(false);
     const [editScore, setEditScore] = useState(comment.score);
@@ -50,7 +49,7 @@ export default function CommentBox(props) {
             {
                 comment.replies.map((comment, index) => {
                     return (
-                        <SubCommentBox key={"subComment" + index}/>
+                        <SubCommentBox key={"subComment" + index} subComment={comment}/>
                     )
                 })
             }
