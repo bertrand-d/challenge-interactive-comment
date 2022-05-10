@@ -1,4 +1,5 @@
 # Frontend Mentor - Interactive comments section
+Challenge trouvé et relevé sur frontend mentor, il s'agit de mon tout premier projet m'ayant permis de tester et d'approcher react
 
 ![Design preview for the Interactive comments section coding challenge](./design/desktop-preview.jpg)
 
